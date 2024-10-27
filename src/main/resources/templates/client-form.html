@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Client Form</title>
+  <style>
+    .error-message{
+        color: red;
+    }
+  </style>
 </head>
 <body>
 
@@ -13,7 +18,11 @@
 
     First Name: <input type="text" th:field="*{firstName}"/><br></br>
 
-    Last Name: <input type="text" th:field="*{lastName}"/><br></br>
+    Last Name: <input type="text" th:field="*{lastName}"/>
+    <span th:if="${#fields.hasErrors('lastName')}"
+          th:errors="${client.lastName}"
+          class="error-message">
+    </span><br></br>
 
     <input type="submit" value="Submit">
 
