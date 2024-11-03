@@ -1,9 +1,6 @@
 package com.ok.validation.model;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 
 @Data
@@ -19,5 +16,12 @@ public class Client {
 	@Min(value = 18, message = "Client must be older than 17")
 	@Max(value = 125, message = "Client must be younger than 126")
 	private int age;
+
+	@NotNull          // 12a3A
+	@Pattern(regexp = "^[A-Za-z0-9]{5}", message = "Enter valid zip code. " +
+					"Only numbers, 5 digits")
+	private String zipCode;
+
+
 
 }
