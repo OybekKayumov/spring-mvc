@@ -32,6 +32,9 @@ public class ClientController {
 	public String processForm(@Valid @ModelAttribute("client") Client client,
 	                          BindingResult bindingResult, Model model) {
 
+		System.out.println("*".repeat(55));
+		System.out.println(bindingResult);
+		System.out.println("*".repeat(55));
 
 		if (bindingResult.hasErrors()) {
 			return "client-form";
