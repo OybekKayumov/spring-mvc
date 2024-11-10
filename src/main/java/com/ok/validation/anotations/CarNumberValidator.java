@@ -17,7 +17,10 @@ public class CarNumberValidator implements ConstraintValidator<CarNumber, String
 	public boolean isValid(String carNumber,
 	                       ConstraintValidatorContext constraintValidatorContext) {
 
+		carNumber = carNumber.toUpperCase();
+
 		boolean result = carNumber.endsWith(countryCode);
 		return result;
 	}
+
 }

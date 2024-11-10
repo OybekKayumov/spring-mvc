@@ -38,6 +38,13 @@
           th:errors="${client.zipCode}"
           class="error">
     </span><br></br>
+
+    Car Number: <input type="text" th:field="*{carNumber}"/>
+    <span th:if="${#fields.hasErrors('carNumber')}"
+          th:errors="${client.carNumber}"
+          class="error">
+    </span><br></br>
+
     <input type="submit" value="Save">
 
   </form>

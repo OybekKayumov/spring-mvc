@@ -1,5 +1,7 @@
 package com.ok.validation.model;
 
+import com.ok.validation.anotations.CarNumber;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
@@ -23,6 +25,7 @@ public class Client {
 					"Only numbers, 5 digits")
 	private String zipCode;
 
-
+	@CarNumber(value = "ENG", message = "Number must be from ENG")
+	private String carNumber;
 
 }
